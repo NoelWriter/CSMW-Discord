@@ -10,11 +10,14 @@ const chalk = require("chalk");
 // Init client
 const client = new Client();
 
+// Collections
 client.commands = new Collection();
 
+// Utilities
 require("./utils/command")(client);
 require("./utils/events")(client);
 
+// Bot login functionality
 client.on('ready', onReady);
 client.login(config.BOT_TOKEN);
 
