@@ -22,7 +22,7 @@ async function onReady() {
     console.info(`Logged in as ${client.user.tag}!`);
 }
 
-// Unhandled errors
+// Error handling
 process.on('SIGINT', () => {
     process.exit();
 });
