@@ -2,8 +2,6 @@
 //                            csmw.io
 // ----------------------------------------------------------------
 
-//https://github.com/Dev-CasperTheGhost/ghostybot/blob/master/src/utils/events.js
-
 // Bot entrypoint
 const { Client, Collection } = require("discord.js");
 const config = require("../config.json");
