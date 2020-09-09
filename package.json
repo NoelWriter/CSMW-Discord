@@ -25,7 +25,8 @@
   },
   "homepage": "csmw.io",
   "dependencies": {
-    "discord.js": "^12.3.1"
+    "discord.js": "^12.3.1",
+    "moment": "^2.27.0"
   },
   "devDependencies": {
     "chalk": "^4.1.0"
