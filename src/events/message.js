@@ -1,14 +1,12 @@
-const queue = new Map();
-const config = require("../../config.json");
 const chalk = require("chalk");
+const { getPrefix } = require("../utils/functions");
 
 module.exports = {
     name: "message",
     async execute(client, message) {
 
         const userId = message.author.id;
-
-        let prefix = getPrefix(client);
+        const prefix = getPrefix(client);
 
         if (
             !prefix.test(message.content) ||
@@ -36,12 +34,4 @@ module.exports = {
         }
     },
 };
-
-function getPrefix(client) {
-    const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const messagePrefix = config.BOT_PREFIX;
-    return new RegExp(
-        `^(<@!?${client.user.id}>|${escapeRegex(messagePrefix)})\\s*`
-    );
-}
 
