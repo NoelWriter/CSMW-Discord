@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
-const moment = require("moment");
 const regions = require("../../data/regions.json");
+const { formatDate, capitalize } = require("../../utils/functions");
 
 module.exports = {
     name: "serverinfo",
@@ -41,10 +41,3 @@ module.exports = {
         await message.channel.send(embed);
     }
 };
-
-const formatDate = (date) => moment(date).format("MM/DD/YYYY");
-
-const capitalize = (s) => {
-    if (typeof s !== 'string') return ''
-    return s.charAt(0).toUpperCase() + s.slice(1)
-}
