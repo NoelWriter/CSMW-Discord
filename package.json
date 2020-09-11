@@ -27,9 +27,12 @@
   "dependencies": {
     "discord.js": "^12.3.1",
     "moment": "^2.27.0",
-    "superagent": "^6.1.0"
+    "superagent": "^6.1.0",
+    "superagent-oauth2-client": "0.0.17"
   },
   "devDependencies": {
-    "chalk": "^4.1.0"
+    "chalk": "^4.1.0",
+    "oauth2-client-js": "0.0.15",
+    "snoowrap": "^1.21.0"
   }
 }
