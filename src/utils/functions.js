@@ -16,4 +16,8 @@ module.exports = {
         const messagePrefix = config.BOT_PREFIX;
         return new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(messagePrefix)})\\s*`);
     },
+
+    notifyOwner(client, message, error, commandname) {
+        client.users.cache.get(config.BOT_OWNER_ID).send(`${message.author.username} has executed ${commandname} and got back the following error :\n\`\`\`${error}\`\`\``);
+    }
 }

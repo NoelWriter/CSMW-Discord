@@ -1,5 +1,6 @@
 const chalk = require("chalk");
-const { getPrefix } = require("../utils/functions");
+const { getPrefix, notifyOwner } = require("../utils/functions");
+const config = require("../../config.json");
 
 module.exports = {
     name: "message",
@@ -22,8 +23,11 @@ module.exports = {
         try {
             if (client.commands.has(command)) {
                 const cmd = client.commands.get(command);
-                console.log(chalk.green(`${message.author.name} | used command ${cmd.name}`));
 
+                if (cmd.category == "manager" && !isBotOwner(message))
+                    return
+
+                console.log(chalk.green(`${message.author.username} | used command ${cmd.name}`));
                 await cmd.execute(client, message, args);
             }
             else
@@ -31,7 +35,12 @@ module.exports = {
 
         } catch (e) {
             console.log(e);
+            notifyOwner(client, message, e);
         }
     },
 };
+
+function isBotOwner(message) {
+    return (message.author.id === config.BOT_OWNER_ID);
+}
 
