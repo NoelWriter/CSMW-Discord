@@ -4,6 +4,8 @@
   "description": "A bot for the communication platform Discord.",
   "main": "src/main.js",
   "scripts": {
+    "start": "cd ./src/ && node ./main.js",
+    "watch": "cd ./src/ && nodemon ./src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
