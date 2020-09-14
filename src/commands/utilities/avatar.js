@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const { notifyOwner } = require("../utils/functions");
+const { notifyOwner } = require("../../utils/functions");
 
 module.exports = {
     name: "avatar",
