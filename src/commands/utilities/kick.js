@@ -14,8 +14,9 @@ module.exports = {
                 if (member) {
                     try {
                         member.kick();
-                    } catch {
+                    } catch (error) {
                         message.reply("I do not have permissions to kick " + member);
+                        console.log(error);
                     }
                 }
             } else {
