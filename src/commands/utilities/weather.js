@@ -7,6 +7,7 @@ module.exports = {
     name: "weather",
     description: "See the weather in a specified country/city",
     category: "util",
+    aliases: [],
     async execute(client, message, args) {
         const query = args.join(" ");
 

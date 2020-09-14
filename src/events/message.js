@@ -21,8 +21,8 @@ module.exports = {
         const command = args.shift().toLowerCase();
 
         try {
-            if (client.commands.has(command)) {
-                const cmd = client.commands.get(command);
+            if (client.commands.has(command) || client.aliases.has(command)) {
+                const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));
 
                 if (cmd.category == "manager" && !isBotOwner(message))
                     return

@@ -5,6 +5,7 @@ module.exports = {
     name: "github",
     description: "Shows github repo link",
     category: "utilities",
+    aliases: [],
     async execute (client, message) {
         try {
             const embed = new MessageEmbed()

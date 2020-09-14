@@ -6,6 +6,7 @@ module.exports = {
     name: "userinfo",
     description: "Show user information",
     category: "utilities",
+    aliases: ["user", "userinfo"],
     async execute (client, message, args) {
         try {
             const guildMember =

@@ -6,6 +6,7 @@ module.exports = {
     name: "botinfo",
     description: "Shows bot information",
     category: "utilities",
+    aliases: ["bot"],
     async execute (client, message) {
         try {
             const embed = new MessageEmbed()

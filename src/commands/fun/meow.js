@@ -5,6 +5,7 @@ module.exports = {
     name: "meow",
     description: "Shows random cat picture",
     category: "fun",
+    aliases: ["cat"],
     async execute(client, message) {
         await (async () => {
             try {

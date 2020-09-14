@@ -5,6 +5,7 @@ module.exports = {
     name: "help",
     description: "Shows help commands",
     category: "utilities",
+    aliases: [],
     async execute (client, message) {
         try {
             const embed = new MessageEmbed()

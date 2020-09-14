@@ -6,11 +6,12 @@ module.exports = {
     name: "serverinfo",
     description: "Show server information",
     category: "utilities",
+    aliases: ["server"],
     async execute (client, message, args) {
         try {
             let server = message.guild;
 
-            if (args)
+            if (args[0])
                 server = await client.guilds.fetch(args[0]);
 
             const regionKey = server.region;
@@ -47,6 +48,7 @@ module.exports = {
             if (error.httpStatus === 400)
                 return message.channel.send(`>>> Specified server does not exist`);
 
+            console.log(error)
             notifyOwner(client, message, error, this.name);
         }
     }

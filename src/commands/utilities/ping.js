@@ -5,6 +5,7 @@ module.exports = {
     name: "ping",
     description: "Ping bot availability",
     category: "utilities",
+    aliases: [],
     async execute (client, message) {
         try {
             const pingMessage = await message.channel.send(">>> Ping?");

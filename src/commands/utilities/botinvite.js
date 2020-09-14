@@ -6,6 +6,7 @@ module.exports = {
     name: "botinvite",
     description: "Shows bot invite link",
     category: "utilities",
+    aliases: ["invite", "invitebot"],
     async execute (client, message) {
         try {
             const url = `https://discord.com/oauth2/authorize?client_id=${config.BOT_CLIENT_ID}&scope=bot&permissions=8&redirect_uri=csmw.io`

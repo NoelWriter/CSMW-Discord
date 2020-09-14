@@ -12,6 +12,7 @@ const client = new Client();
 
 // Collections
 client.commands = new Collection();
+client.aliases = new Collection();
 
 // Utilities
 require("./utils/command")(client);

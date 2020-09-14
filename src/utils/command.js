@@ -15,6 +15,12 @@ module.exports = (client) => {
 
             evaluateErrors(command, file);
 
+            if (client.aliases) {
+                for (const alias of command.aliases) {
+                    client.aliases.set(alias, command.name);
+                }
+            }
+
             client.commands.set(command.name, command);
         }
     })
