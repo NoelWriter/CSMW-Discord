@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const { notifyOwner } = require("../utils/functions");
 
 module.exports = {
     name: "avatar",
@@ -25,7 +26,7 @@ module.exports = {
 
         message.channel.send(embed);
         } catch (error) {
-            console.error(error);
+            notifyOwner(client, message, error);
         }
     }
 }
