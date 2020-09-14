@@ -15,7 +15,7 @@ module.exports = {
                 .setTimestamp()
                 .setFooter(message.author.username)
                 .setColor("DARK_PURPLE")
-                .setDescription(`[Invite link](${url}`)
+                .setDescription(`[Invite link](${url})`)
 
             await message.channel.send(embed);
         } catch (error) {

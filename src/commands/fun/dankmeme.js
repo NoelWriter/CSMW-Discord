@@ -1,5 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const superagent = require('superagent');
+const { notifyOwner } = require("../../utils/functions");
 
 module.exports = {
     name: "dankmeme",
@@ -28,8 +29,8 @@ module.exports = {
 
                     message.channel.send(embed);
                 });
-            } catch (err) {
-                console.error(err);
+            } catch (error) {
+                notifyOwner(client, message, error, this.name);
             }
         })();
     }

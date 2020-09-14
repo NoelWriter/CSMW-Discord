@@ -1,6 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const { notifyOwner,  } = require("../../utils/functions");
-const dateFormat = require('dateformat');
+const { notifyOwner  } = require("../../utils/functions");
 const config = require("../../../config.json");
 const R6API = require('r6api.js');
 const moment = require("moment");
