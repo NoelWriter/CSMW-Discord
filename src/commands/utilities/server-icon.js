@@ -12,6 +12,7 @@ module.exports = {
                 dynamic: true,
                 size: 1024
             });
+
             const embed = new MessageEmbed()
                 .setTimestamp()
                 .setFooter(message.author.username)
