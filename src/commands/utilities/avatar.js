@@ -4,25 +4,28 @@ module.exports = {
     name: "avatar",
     description: "Shows avatar",
     category: "utilities",
-    aliases: ["avatar", "picca"],
+    aliases: ["picca"],
     async execute (client, message) {
+
         try {
-            avatar = message.author.displayAvatarURL({
+            let user = message.mentions.users.first() || message.author;
+            username = user.username;
+            avatar = user.displayAvatarURL({
                 format: "png",
                 dynamic: true,
                 size: 1024
             });
+
+            const embed = new MessageEmbed()
+                .setTimestamp()
+                .setFooter(message.author.username)
+                .setColor("DARK_PURPLE")
+                .setTitle(username)
+                .setImage(avatar);
+
+        message.channel.send(embed);
         } catch (error) {
             console.error(error);
         }
-
-        const embed = new MessageEmbed()
-            .setTimestamp()
-            .setFooter(message.author.username)
-            .setColor("DARK_PURPLE")
-            .setTitle("avatar")
-            .setImage(avatar);
-
-        message.channel.send(embed);
     }
 }
