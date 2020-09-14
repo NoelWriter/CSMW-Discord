@@ -19,12 +19,7 @@ require("./utils/command")(client);
 require("./utils/events")(client);
 
 // Bot login functionality
-client.on('ready', onReady);
 client.login(config.BOT_TOKEN);
-
-async function onReady() {
-    console.info(`Logged in as ${client.user.tag}!`);
-}
 
 // Error handling
 process.on('SIGINT', () => {
