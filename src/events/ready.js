@@ -8,5 +8,6 @@ module.exports = {
         console.log(
             `--------------------------------------------------------------------\n[CSMW.IO]: Logged in as ${client.user.tag}!\nBot is running with ${channelCount} channels,  ${userCount} users and ${serverCount} servers\n--------------------------------------------------------------------\n`
         );
+
     },
 };
