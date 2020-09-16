@@ -13,11 +13,9 @@ module.exports = {
                 let userToBan = message.mentions.members.first() || { bannable: false };
                 if (userToBan.bannable) {
                     userToBan.ban();
-                } else {
-                    message.reply('nope');
-                }
+                } else message.reply('>>> The specific user is not bannable');
             } else {
-                message.reply('You are not permitted to ban');
+                message.reply('>>> You do not have the required permissions to execude this command');
             }
         } catch (error) {
             notifyOwner(client, message, error, this.name);
