@@ -15,12 +15,12 @@ module.exports = {
                     try {
                         member.kick();
                     } catch (error) {
-                        message.reply("I do not have permissions to kick " + member);
+                        message.reply(">>> I do not have permissions to kick " + member);
                         console.log(error);
                     }
                 }
             } else {
-                message.reply("You do not have permissions to kick " + member);
+                message.reply(">>> You do not have permissions to kick " + member);
             }
         } catch (error) {
             notifyOwner(client, message, error, this.name);
