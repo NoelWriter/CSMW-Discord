@@ -51,18 +51,22 @@ module.exports = {
                 .setTitle(username)
                 .setColor("DARK_PURPLE")
                 .setThumbnail(currentStatus.image)
-                .addField("**Kills**", stats.pvp.general.kills, true)
-                .addField("**Deaths**", stats.pvp.general.deaths, true)
-                .addField("**KD Ratio**", getKDRatio(stats.pvp.general.kills, stats.pvp.general.deaths), true)
-                .addField("**Player Level**", levelStats.level, true)
-                .addField("**Playtime**", getPlaytimeString(playtimeGeneral), true)
-                .addField("**Headshot %**", getHeadshotPercentage(stats.pvp.general.kills, stats.pvp.general.headshots) + '%', true)
-                .addField("**Matches Played**", stats.pvp.general.matches, true)
-                .addField("**Wins**", stats.pvp.general.wins, true)
-                .addField("**Losses**", stats.pvp.general.losses, true)
-                .addField("**Win Loss Ratio**", getWinLossRatio(stats.pvp.general.wins, stats.pvp.general.losses), true)
-                .addField("**Current Rank**", currentStatus.name , true)
-                .addField("**Current MMR**", currentStatus.mmr, true)
+                .addField('R6S Statistics',`
+                    **Kills:** ${stats.pvp.general.kills}
+                    **Deaths:** ${stats.pvp.general.deaths}
+                    **KD Ratio:** ${getKDRatio(stats.pvp.general.kills, stats.pvp.general.deaths)}
+                    **Level:** ${levelStats.level}
+                    **Playtime:** ${getPlaytimeString(playtimeGeneral)}
+                    **Current Rank:**: ${currentStatus.name}
+                `, true)
+                .addField('.',`
+                    **Headshot %:** ${getHeadshotPercentage(stats.pvp.general.kills, stats.pvp.general.headshots)}%
+                    **Matches Played:** ${stats.pvp.general.matches}
+                    **Wins:** ${stats.pvp.general.wins}
+                    **Losses:** ${stats.pvp.general.losses}
+                    **Win Loss Ratio:** ${getWinLossRatio(stats.pvp.general.wins, stats.pvp.general.losses)}
+                    **Current MMR:** ${currentStatus.mmr}
+                `, true)
                 .setTimestamp()
                 .setFooter(message.author.username)
 
