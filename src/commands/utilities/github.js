@@ -12,7 +12,7 @@ module.exports = {
                 .setTimestamp()
                 .setFooter(message.author.username)
                 .setColor("DARK_PURPLE")
-                .setDescription(`[Github repository](https://github.com/NoelWriter/CSMW-Discord)`)
+                .setDescription(`[Github repository](httpsw://github.com/NoelWriter/CSMW-Discord)`)
 
             await message.channel.send(embed);
         } catch (error) {
