@@ -32,13 +32,13 @@ module.exports = {
                         .setAuthor(user.name, getCountryFlagURL(user.country), getUserPageURL(user.id))
                         .setThumbnail(getUserAvatarURL(user.id))
                         .setDescription(`
-                            **Rank:** #${user.pp.rank} (#${user.pp.countryRank} ${user.country})
-                            **PP:** ${user.pp.raw}pp
-                            **Level:** ${user.level}
-                            **Plays:** ${user.counts.plays}
-                            **Accuracy:** ${parseFloat(user.accuracy).toFixed(2)}%
-                            **Join Date:** ${formatDate(user.raw_joinDate)}
-                            **Playtime:** ${parseInt(playtimeGeneral.asHours())}h
+**Rank:** #${user.pp.rank} (#${user.pp.countryRank} ${user.country})
+**PP:** ${user.pp.raw}pp
+**Level:** ${user.level}
+**Plays:** ${user.counts.plays}
+**Accuracy:** ${parseFloat(user.accuracy).toFixed(2)}%
+**Join Date:** ${formatDate(user.raw_joinDate)}
+**Playtime:** ${parseInt(playtimeGeneral.asHours())}h
                         `, true)
                         .setFooter(message.author.username)
                         .setColor("DARK_PURPLE")

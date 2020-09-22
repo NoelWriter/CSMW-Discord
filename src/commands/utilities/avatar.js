@@ -24,7 +24,7 @@ module.exports = {
                 .setTitle(username)
                 .setImage(avatar);
 
-        message.channel.send(embed);
+        await message.channel.send(embed);
         } catch (error) {
             notifyOwner(client, message, error);
         }

@@ -24,18 +24,22 @@ module.exports = {
                 .setTitle(server.name)
                 .setThumbnail(server.iconURL({ dynamic: true, size: 1024 }))
                 .setColor("DARK_PURPLE")
-                .addField("**Server Owner**", server.owner, true)
-                .addField("**Roles Count**", server.roles.cache.size, true)
-                .addField("**Channel Count**", server.channels.cache.size, true)
-                .addField("**Emoji Count**", server.emojis.cache.size, true)
-                .addField("**Member Count**", server.memberCount, true)
-                .addField("**Partnered**", server.partnered, true)
-                .addField("**Created At**", formatDate(server.createdAt), true)
-                .addField("**Joined At**", formatDate(message.member.joinedAt), true)
-                .addField("**Region**", region, true)
-                .addField("**Boosts**", server.premiumSubscriptionCount, true)
-                .addField("**Boost Level**", server.premiumTier, true)
-                .addField("**Shard Ping**", server.shard.ping, true)
+                .addField("Server Information", `
+**Owner:** ${server.owner}
+**Member Count:** ${server.memberCount}
+**Emoji Count:** ${server.emojis.cache.size}
+**Roles Count:** ${server.roles.cache.size}
+**Channel Count:** ${server.channels.cache.size}
+**Shard Ping:** ${server.shard.ping}
+                `, true)
+                .addField("\u200b", `
+**Region:** ${region}
+**Created At:** ${formatDate(server.createdAt)}
+**Joined At:** ${formatDate(message.member.joinedAt)}
+**Partnered:** ${server.partnered}
+**Boosts:** ${server.premiumSubscriptionCount}
+**Boost Level:** ${server.premiumTier}
+                `, true)
                 .setImage(server.bannerURL({format: "png", dynamic: true, size: 2048}))
                 .setTimestamp()
                 .setFooter(message.author.username)
