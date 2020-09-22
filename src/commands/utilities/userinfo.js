@@ -20,10 +20,14 @@ module.exports = {
                 .setTitle(guildMember.displayName)
                 .setThumbnail(guildMember.user.avatarURL({ dynamic: true, size: 1024 }))
                 .setColor("DARK_PURPLE")
-                .addField("**User ID**", guildMember.id, true)
-                .addField("**User tag**", guildMember.user.tag , true)
-                .addField("**Created At**", formatDate(guildMember.user.createdAt), true)
-                .addField("**Joined At**", formatDate(guildMember.user.joinedAt), true)
+                .setDescription(`
+**User ID:** ${guildMember.id}
+**User tag:** ${guildMember.user.tag}
+**Created At:** ${formatDate(guildMember.user.createdAt)}
+**Joined At:** ${formatDate(guildMember.user.joinedAt)}
+**Highest Role:** ${guildMember.roles.hoist}
+**Current Status:** ${guildMember.presence.status}
+                `)
                 .setTimestamp()
                 .setFooter(message.author.username)
 
