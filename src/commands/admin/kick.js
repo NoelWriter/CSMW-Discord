@@ -4,7 +4,7 @@ const { notifyOwner } = require("../../utils/functions");
 module.exports = {
     name: "kick",
     description: "Kick a member",
-    category: "utilities",
+    category: "admin",
     aliases: [],
     async execute (client, message) {
         try {

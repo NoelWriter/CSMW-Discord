@@ -3,7 +3,7 @@ const { notifyOwner } = require("../../utils/functions");
 module.exports = {
     name: 'ban',
     description: "Bans a user",
-    category: "utilities",
+    category: "admin",
     aliases: [],
     async execute (client, message) {
         try {
