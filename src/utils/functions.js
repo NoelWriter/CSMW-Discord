@@ -26,6 +26,12 @@ module.exports = {
         const result = await dbQuery("SELECT * FROM users");
         console.log(result);
         return result
+    },
+
+    async getUserById(id) {
+        const result = await dbQuery(`SELECT * FROM users WHERE id = ${id}`);
+        console.log(result);
+        return result
     }
 
 }

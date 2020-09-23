@@ -1,13 +1,13 @@
-const { getUsers } = require("../../utils/functions");
+const { getUserById, notifyOwner } = require("../../utils/functions");
 
 module.exports = {
-    name: "users",
+    name: "dbuser",
     description: "Let's bot say the given arguments",
     category: "manager",
     aliases: [],
-    async execute (client, message) {
+    async execute (client, message, args) {
         try {
-            await message.channel.send(JSON.stringify(await getUsers()))
+            await message.channel.send(`\`\`\`${JSON.stringify(await getUserById(args[0]))}\`\`\``)
 
         } catch (error) {
             notifyOwner(client, message, error, this.name);
