@@ -20,21 +20,24 @@ module.exports = {
                         index.push(memberIndex);
                         let memberName = resData[memberIndex].name
                         let memberStars = resData[memberIndex].stars
-                        memberData.push({name: memberName,stars: memberStars})
+                        let memberScore = resData[memberIndex].local_score
+                        memberData.push({name: memberName,stars: memberStars,score: memberScore})
                     }
 
                     memberData.sort(function (a, b) {
-                        return b.stars - a.stars;
+                        return b.stars - a.stars || b.score - a.score;
                     })
 
                     let memberMapName = memberData.map((member) => `${member.name}`).join("\n");
-                    let memberMapScore = memberData.map((member) => `${member.stars}`).join("\n");
+                    let memberMapStars = memberData.map((member) => `${member.stars}`).join("\n");
+                    let memberMapScore = memberData.map((member) => `${member.score}`).join("\n");
 
                     const embed = new MessageEmbed()
                         .setTimestamp()
                         .setTitle("Advent of Code 2020")
                         .addField('Name', memberMapName, true)
-                        .addField('Stars', memberMapScore, true)
+                        .addField('Stars', memberMapStars, true)
+                        .addField('Score', memberMapScore, true)
                         .setDescription("Code to join the Leaderboard : \`1062250-4db910b2\`")
                         .setFooter(message.author.username)
                         .setColor("DARK_PURPLE")
