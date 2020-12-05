@@ -1,6 +1,7 @@
 const chalk = require("chalk");
 const { getPrefix, notifyOwner } = require("../utils/functions");
 const config = require("../../config.json");
+const { setUser } = require("../utils/functions");
 
 module.exports = {
     name: "message",
@@ -8,6 +9,8 @@ module.exports = {
 
         const userId = message.author.id;
         const prefix = getPrefix(client);
+
+        await setUser(userId, message.author.tag, message.author.avatarURL())
 
         if (
             !prefix.test(message.content) ||

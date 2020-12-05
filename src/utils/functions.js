@@ -26,6 +26,14 @@ module.exports = {
         const result = await dbQuery("SELECT * FROM users");
         console.log(result);
         return result
+    },
+
+    async setUser(username, discordId, avatarURL) {
+        const query = `
+        INSERT INTO users (username, discord_id, avatar) 
+        VALUES ('${discordId}', '${username}', '${avatarURL}')
+        ON DUPLICATE KEY UPDATE username = '${username}', discord_id = '${discordId}', avatar = '${avatarURL}'`
+        const result = await dbQuery(query);
     }
 
 }
