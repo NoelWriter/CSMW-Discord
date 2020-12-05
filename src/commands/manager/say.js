@@ -11,7 +11,7 @@ module.exports = {
                 message.delete();
             });
         } catch (error) {
-            console.log(error)
+            notifyOwner(client, message, error, this.name);
         }
     }
 };

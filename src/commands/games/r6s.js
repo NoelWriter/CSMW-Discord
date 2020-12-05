@@ -52,20 +52,20 @@ module.exports = {
                 .setColor("DARK_PURPLE")
                 .setThumbnail(currentStatus.image)
                 .addField('R6S Statistics',`
-                    **Kills:** ${stats.pvp.general.kills}
-                    **Deaths:** ${stats.pvp.general.deaths}
-                    **KD Ratio:** ${getKDRatio(stats.pvp.general.kills, stats.pvp.general.deaths)}
-                    **Level:** ${levelStats.level}
-                    **Playtime:** ${getPlaytimeString(playtimeGeneral)}
-                    **Current Rank:**: ${currentStatus.name}
+**Kills:** ${stats.pvp.general.kills}
+**Deaths:** ${stats.pvp.general.deaths}
+**KD Ratio:** ${getKDRatio(stats.pvp.general.kills, stats.pvp.general.deaths)}
+**Level:** ${levelStats.level}
+**Playtime:** ${getPlaytimeString(playtimeGeneral)}
+**Current Rank:**: ${currentStatus.name}
                 `, true)
-                .addField('.',`
-                    **Headshot %:** ${getHeadshotPercentage(stats.pvp.general.kills, stats.pvp.general.headshots)}%
-                    **Matches Played:** ${stats.pvp.general.matches}
-                    **Wins:** ${stats.pvp.general.wins}
-                    **Losses:** ${stats.pvp.general.losses}
-                    **Win Loss Ratio:** ${getWinLossRatio(stats.pvp.general.wins, stats.pvp.general.losses)}
-                    **Current MMR:** ${currentStatus.mmr}
+                .addField('\u200b',`
+**Headshot %:** ${getHeadshotPercentage(stats.pvp.general.kills, stats.pvp.general.headshots)}%
+**Matches Played:** ${stats.pvp.general.matches}
+**Wins:** ${stats.pvp.general.wins}
+**Losses:** ${stats.pvp.general.losses}
+**Win Loss Ratio:** ${getWinLossRatio(stats.pvp.general.wins, stats.pvp.general.losses)}
+**Current MMR:** ${currentStatus.mmr}
                 `, true)
                 .setTimestamp()
                 .setFooter(message.author.username)

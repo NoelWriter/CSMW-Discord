@@ -34,6 +34,12 @@ module.exports = {
         VALUES ('${discordId}', '${username}', '${avatarURL}')
         ON DUPLICATE KEY UPDATE username = '${username}', discord_id = '${discordId}', avatar = '${avatarURL}'`
         const result = await dbQuery(query);
+    },
+
+    async getUserById(id) {
+        const result = await dbQuery(`SELECT * FROM users WHERE id = ${id}`);
+        console.log(result);
+        return result
     }
 
 }

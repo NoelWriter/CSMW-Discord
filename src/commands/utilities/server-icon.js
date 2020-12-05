@@ -2,17 +2,13 @@ const { MessageEmbed } = require("discord.js");
 const { notifyOwner } = require("../../utils/functions");
 
 module.exports = {
-    name: "avatar",
-    description: "Shows avatar",
-    category: "utilities",
-    aliases: ["picca"],
+    name: 'servericon',
+    description: 'Shows server icon',
+    category: 'utilities',
+    aliases: ['icon', 'server-icon', 'serverIcon'],
     async execute (client, message) {
-
         try {
-            let user = message.mentions.users.first() || message.author;
-            username = user.username;
-            avatar = user.displayAvatarURL({
-                format: "png",
+            let icon = message.guild.iconURL({
                 dynamic: true,
                 size: 1024
             });
@@ -21,10 +17,10 @@ module.exports = {
                 .setTimestamp()
                 .setFooter(message.author.username)
                 .setColor("DARK_PURPLE")
-                .setTitle(username)
-                .setImage(avatar);
+                .setTitle(message.guild.name)
+                .setImage(icon);
 
-        await message.channel.send(embed);
+            message.channel.send(embed);
         } catch (error) {
             notifyOwner(client, message, error);
         }
