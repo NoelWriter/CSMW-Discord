@@ -10,8 +10,6 @@ module.exports = {
         const userId = message.author.id;
         const prefix = getPrefix(client);
 
-        await setUser(userId, message.author.tag, message.author.avatarURL())
-
         if (
             !prefix.test(message.content) ||
             message.author.bot ||
@@ -19,6 +17,7 @@ module.exports = {
         )
             return;
 
+        await setUser(userId, message.author.tag, message.author.avatarURL())
         const [, matchedPrefix] = message.content.match(prefix);
         const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
         const command = args.shift().toLowerCase();
