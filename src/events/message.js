@@ -17,7 +17,13 @@ module.exports = {
         )
             return;
 
-        await setUser(userId, message.author.tag, message.author.avatarURL())
+        try {
+            setUser(userId, message.author.tag, message.author.avatarURL())
+        } catch (e) {
+            console.log(e);
+            notifyOwner(client, message, e);
+        }
+
         const [, matchedPrefix] = message.content.match(prefix);
         const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
         const command = args.shift().toLowerCase();
