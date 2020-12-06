@@ -30,9 +30,8 @@ module.exports = {
 
     async setUser(discordId, username, avatarURL) {
         const query = `
-        INSERT INTO users (username, discord_id, avatar) 
-        VALUES ('${username}', '${discordId}', '${avatarURL}')
-        ON DUPLICATE KEY UPDATE discord_id = '${discordId}', username = '${username}', avatar = '${avatarURL}'`
+        INSERT IGNORE INTO users (username, discord_id, avatar) 
+        VALUES ('${username}', '${discordId}', '${avatarURL}')`
         const result = await dbQuery(query);
     },
 
