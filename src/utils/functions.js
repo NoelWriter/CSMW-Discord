@@ -40,6 +40,11 @@ module.exports = {
         const result = await dbQuery(`SELECT * FROM users WHERE id = ${id}`);
         console.log(result);
         return result
+    },
+
+    async getUserTokenBalance(discordId) {
+        const result = await dbQuery(`SELECT tokens FROM users WHERE discord_id = ${discordId}`);
+        return JSON.parse(JSON.stringify(result))[0].tokens
     }
 
 }
